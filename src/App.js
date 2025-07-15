@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CountContainer from './Components/Counters/CountContainer'
+import {Provider} from 'react-redux'
+import Store from './Components/CounterRedux/Store'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='d-flex flex-row justify-content-center align-items-center' >
+      
+      <Provider store={Store} >
+          <CountContainer/>
+      </Provider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
